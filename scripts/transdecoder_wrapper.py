@@ -210,7 +210,7 @@ def transrate_cds_ref(outcds,num_cores,reference=CDS_REFERENCE):
 	os.system("gunzip "+outcds)
 	path_cds, file_cds = (os.path.split(outcds)) #splits the path from the file name
 	cds_base_name = (os.path.splitext(file_cds)[0])
-	results_name = cds_base_name+"_transrate_results"
+	results_name = cds_base_name+"translated_Transrate_results"
 	
 	if os.path.exists(results_name):
 	
@@ -222,7 +222,7 @@ def transrate_cds_ref(outcds,num_cores,reference=CDS_REFERENCE):
 		cmd += " --threads "+str(num_cores)
 		cmd += " --reference "+reference
 		cmd += " --output "+results_name
-		cmd += " > "+cds_base_name+"_transrate_results.log" #separate log for transrate for easy access
+		cmd += " > "+cds_base_name+"_translated_Transrate.log" #separate log for transrate for easy access
 		run(cmd,logfile)
 
 	assert os.path.exists(results_name), "Transrate not completed"
