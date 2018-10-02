@@ -24,7 +24,7 @@ def mafft(DIR,fasta,thread,seqtype):
 	maxlen = 0
 	for s in seqlist:
 		maxlen = max(maxlen,len(s.seq))
-	assert seqcount >= 4, "less than 4 sequences in "+DIR+fasta
+	assert seqcount >= 2, "less than 4 sequences in "+DIR+fasta
 	
 	if seqtype == "dna":
 		infasta = DIR+fasta

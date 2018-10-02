@@ -20,15 +20,33 @@ Citation: Yang, Y. and S.A. Smith. 2014. Orthology inference in non-model organi
 
 **transdecoder_wrapper.py**: Change the path of BLASTP_DB_PATH, this will be the path to your custom blast database. One with proteomes of Arabidopsis and Beta is provided in the repository folder called **databases** as db.
 
-Dependencies needed to run the scripts:
-
-[Rcorrector](https://github.com/mourisl/Rcorrector), [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic), [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki),
-[Transrate](http://hibberdlab.com/transrate/), [Corset](https://github.com/Oshlack/Corset) [Salmon v0.9.1](https://github.com/COMBINE-lab/salmon/releases), [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki), [BLAST](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
-[cd-hit](https://github.com/weizhongli/cdhit/releases), [MCL](https://micans.org/mcl/), [TreeShrink](https://github.com/uym2/TreeShrink), [RAxML](https://github.com/stamatak/standard-RAxML), [Phyx](https://github.com/FePhyFoFum/phyx), [mafft](https://mafft.cbrc.jp/alignment/software/),
-[Gblock](http://molevol.cmima.csic.es/castresana/Gblocks.html), [FastTree](http://www.microbesonline.org/fasttree/)
+Dependencies needed to run the scripts (Note that for some dependencies specific versions were used so if you used a different version it may not work):
 
 
-### Step 1: Read processing
+
+[Rcorrector](https://github.com/mourisl/Rcorrector)
+[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) Version 0.36 (newer versions should work)
+[Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) Version 2.3.3 (newer versions should work)
+[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) Version 0.11.6 (newer versions should work)
+[Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) Version 2.5.1 (newer versions may have a conflict with version of Salmon)
+[Transrate](http://hibberdlab.com/transrate/) Version 1.0.3 (Problems have been reported with some libraries of Salmon 0.8.2, please check that Salmon works properly. If you have problems with Salmon 0.8.2 you can install Transrate from [here](https://github.com/dfmoralesb/transrate), this will work with Salmon 0.9.1)
+[Corset](https://github.com/Oshlack/Corset) 
+[Salmon](https://github.com/COMBINE-lab/salmon/releases) Version v.0.9.1 (other versions won't work)
+[TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki) Version 5.3.0 (older or newer versions probably will affect when shortening the names of translated transcripts)
+[BLAST](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
+[cd-hit](https://github.com/weizhongli/cdhit/releases) Version 4.6.8 (newer versions should work)
+[MCL](https://micans.org/mcl/) Version 14-137
+[TreeShrink](https://github.com/uym2/TreeShrink) Version 1.0.0
+[RAxML](https://github.com/stamatak/standard-RAxML) Version 8.2.11  (newer versions should work)
+[Phyx](https://github.com/FePhyFoFum/phyx)
+[mafft](https://mafft.cbrc.jp/alignment/software/) Version 7.307 (newer versions should work)
+[Gblocks](http://molevol.cmima.csic.es/castresana/Gblocks.html) Version 0.91b
+[FastTree](http://www.microbesonline.org/fasttree/) Version 2.1.10 (newer versions should work)
+
+
+### Step 1: Read processing 
+
+**Note that the pipeline is expecting that the reads are names as taxonID_1.fq.gz or taxonID_1.fq for single end reads and taxonID_1.fq.gz and taxonID_2.fq.gz or taxonID_1.fq and taxonID_2.fq for paired end reads. If redas are not name like that the pipeline won't work**
 
 The read processing will do:
 
