@@ -34,11 +34,11 @@ Dependencies needed to run the scripts (Note that for some dependencies specific
 
 [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) Version 2.5.1 (newer versions may have a conflict with version of Salmon)
 
-[Transrate](http://hibberdlab.com/transrate/) Version 1.0.3 (Problems have been reported with some libraries of Salmon 0.8.2, please check that Salmon works properly. If you have problems with Salmon 0.8.2 you can install Transrate from [here](https://github.com/dfmoralesb/transrate), this will work with Salmon 0.9.1)
+[Transrate](http://hibberdlab.com/transrate/) Version 1.0.3 (Problems have been reported with some libraries of Salmon 0.6.2, please check that Salmon works properly. If you have problems with Salmon 0.6.0 you can install Transrate from [here](https://github.com/dfmoralesb/transrate), this will work with Salmon 0.8.2, which needs to be in the path as salmon)
 
 [Corset](https://github.com/Oshlack/Corset) 
 
-[Salmon](https://github.com/COMBINE-lab/salmon/releases) Version v.0.9.1 (other versions won't work)
+[Salmon](https://github.com/COMBINE-lab/salmon/releases) Version v.0.9.1 (This is used for Corset and have not been tested with newer versions). You need to name this version salmon-0.9.1.
 
 [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki) Version 5.3.0 (older or newer versions probably will affect when shortening the names of translated transcripts)
 
