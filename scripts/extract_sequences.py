@@ -8,8 +8,8 @@ from Bio import SeqIO
 from os.path import expanduser
 home = expanduser("~")
 
-CP_DATABASE=os.path.expanduser("~/Desktop/botany_2018/databases/chloroplast_land_plants_19_dec_2017.fa.bgz")
-MT_DATABASE=os.path.expanduser("~/Desktop/botany_2018/databases/mitochondria_land_plants_15_dec_2017.fa.bgz")
+CP_DATABASE=os.path.expanduser("~/Desktop/botany_2018/databases/chloroplast_NCBI_reference_sequences_OCT_17_2018.fasta.bgz")
+MT_DATABASE=os.path.expanduser("~/Desktop/botany_2018/databases/mitochondrion_NCBI_reference_sequences_OCT_17_2018.fasta.bgz")
 
 def extract_order_cp(order,DIR):
 	assert os.path.exists(CP_DATABASE),"Cannot find the plastome database "+CP_DATABASE
@@ -34,7 +34,7 @@ def extract_order_cp(order,DIR):
 			for i in order_keys: sequences.append(cp_db[i]) #search in indexed cp database sequences with the specified plant Order and appends to the list
 			count = SeqIO.write(sequences, (DIR+order+"_cp.fa"), "fasta") #counts and writes the fasta file containing only the sequences from the specified plant Order
 			print("Extracted %i chloroplast sequences for" % count),order,"in",(order+"_cp.fa") #print the number of sequences extracted and the name of the destination file
-	assert os.path.exists(DIR+extracted_order_cp_seqs), "No choloroplast file with " + order + " sequences was created"
+	#assert os.path.exists(DIR+extracted_order_cp_seqs), "No choloroplast file with " + order + " sequences was created"
 
 
 
@@ -62,7 +62,7 @@ def extract_order_mt(order,DIR):
 			for i in order_keys: sequences.append(mt_db[i])
 			count = SeqIO.write(sequences, (DIR+order+"_mt.fa"), "fasta")
 			print("Extracted %i mitochondrial sequences for" % count),order,"in",(order+"_mt.fa")
-	assert os.path.exists(DIR+extracted_order_mt_seqs), "No mitochondrial file with " + order + " sequences was created"
+	#assert os.path.exists(DIR+extracted_order_mt_seqs), "No mitochondrial file with " + order + " sequences was created"
 
 
 def extract_both_cat(order,DIR):
@@ -94,7 +94,7 @@ def extract_both_cat(order,DIR):
 		elif os.path.exists(DIR+extracted_order_mt_seqs) and not os.path.exists(DIR+extracted_order_cp_seqs):
 			print "Only mitochondrial sequences found",order
 	
-	assert os.path.exists(DIR+extracted_order_cp_mt_seqs), "No contatenated file with " + order + " sequences was created"
+	#assert os.path.exists(DIR+extracted_order_cp_mt_seqs), "No contatenated file with " + order + " sequences was created"
 
 
 if __name__ == "__main__":
