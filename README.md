@@ -70,7 +70,7 @@ The read processing will do:
 1. Random sequencing error correction with [Rcorrector](https://github.com/mourisl/Rcorrector)
 2. Removes read pairs that cannot be corrected
 3. Remove sequencing adapters and low quality sequences with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
-4. Filter organelle reads (cpDNA, mtDNA or both) with [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). Files containing only organelle reads will be produced which can be use to assemble for example the plastomes with [Fast-Plast](https://github.com/mrmckain/Fast-Plast)
+4. Filter organelle reads (cpDNA, mtDNA or both) with [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). Files containing only organelle reads will be produced which can be use to assemble for example the plastomes with [Fast-Plast](https://github.com/mrmckain/Fast-Plast
 5. Runs [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to check read quality and detect over-represented reads
 6. Remove Over-represented sequences
 
@@ -78,7 +78,7 @@ The script **filter_fq.py** will run all this steps for a given mRNA library. Fo
 
 	python filter_fq.py taxonID_1.fq.gz taxonID_2.fq.gz Order_name genome_to_filter[cp, mt or both] num_cores output_dir
 	
-The first two arguments are the read files. The Order_name is the plant Order (eg. Caryophyllales) will be used for bowtie2 to create a database to filter the organelle reads and can be replaced with any plant Order (or Family) where you study group belongs. For the organelle genome you can especify **cpDNA**, **mtDNA** or **both**. **num_core** is the number of cpus or threads to used. **output_dir** is where all the output files will be saved (any existing directory can be used).
+The first two arguments are the read files. The Order_name is the plant Order (eg. Caryophyllales) will be used for bowtie2 to create a database to filter the organelle reads and can be replaced with any plant Order (or any taxonomic level following [NCBI taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy)) where you study group belongs. For a list of available genomes with their correspondence taxonomy check for the [cp_lookout](https://bitbucket.org/yanglab/phylogenomic_dataset_construction/src/bf3cd62fdfa139f7c43cf53815f189e9be264306/databases/chloroplast_NCBI_reference_sequences_OCT_17_2018_lookout.txt?at=master&fileviewer=file-view-default) or [mt_lookout](https://bitbucket.org/yanglab/phylogenomic_dataset_construction/src/bf3cd62fdfa139f7c43cf53815f189e9be264306/databases/mitochondrion_NCBI_reference_sequences_OCT_17_2018_lookout.txt?at=master&fileviewer=file-view-default) tables in the databases folder. For the organelle genome you can especify **cpDNA**, **mtDNA** or **both**. **num_core** is the number of cpus or threads to used. **output_dir** is where all the output files will be saved (any existing directory can be used).
 	
 For single end reads:
 	
