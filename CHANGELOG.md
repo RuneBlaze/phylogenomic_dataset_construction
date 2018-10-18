@@ -8,6 +8,6 @@
 -cp and mt genomes lookout tables
 
 ###Changed
--Search for cp and mt Order now can be done with any taxonomic level from NCBI
+-Search for cp and mt Order now can be done with any taxonomic rank from NCBI
 
  
