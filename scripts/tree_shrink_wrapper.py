@@ -7,7 +7,7 @@ TreeShrink must be install and on path
 
 import sys, os, shutil
 
-def trim(DIR,tree_file_ending):
+def trim(DIR,tree_file_ending,q):
 	if DIR[-1] != "/": DIR += "/"
 	
 	filecount = 0
@@ -17,7 +17,7 @@ def trim(DIR,tree_file_ending):
 		if i.endswith(tree_file_ending):
 			print i
 			filecount += 1
-			cmd= ["treeshrink.py","-i", DIR+i ,"-o", i+".tt", "-c","-m per-gene", "-d",DIR+i+".tt_dir"]
+			cmd= ["treeshrink.py","-i", DIR+i ,"-o", i+".tt", "-c","-m per-gene", "-q"+str(q), "-d",DIR+i+".tt_dir"]
 			print (" ".join(cmd))
 			os.system(" ".join(cmd))
 	
@@ -45,12 +45,11 @@ def trim(DIR,tree_file_ending):
 			
 			
 if __name__ == "__main__":
-	if len(sys.argv) != 3:
-		print "python tree_shrink_wrapper.py DIR tree_file_ending"
+	if len(sys.argv) != 4:
+		print "python tree_shrink_wrapper.py DIR tree_file_ending quantile"
 		sys.exit(0)
 
-	DIR,tree_file_ending = sys.argv[1:]
-	trim(DIR,tree_file_ending)
-
+	DIR,tree_file_ending,q = sys.argv[1:]
+	trim(DIR,tree_file_ending,q)
 
 

@@ -120,9 +120,11 @@ For single end reads:
 
 The output contining the assembled transcriptome will be called **taxonID.Trinity.fasta**
 
+
 ### Step 3: Transcript filtering and Translation using [TransDecoder](https://github.com/TransDecoder/TransDecoder/wiki) with blastp for choosing orfs
 
 Note: The assembly quality and filtering steps using Transrate is only available for paired end libraries because Transrate does not work with single end reads.
+
 
 #### Assembly quality
 
@@ -131,6 +133,7 @@ Now we're going to perform a _de novo_ assembly quality analysis with [Transrate
 	python transrate_wrapper.py taxonID.Trinity.fasta taxonID_1.overep_filtered.fq.gz taxonID_2.overep_filtered.fq.gz num_cores output_dir
 
 The results will be found in folder **taxonID.Trinity_transrate_results**. Remember to use the filtered reads for for the assembly quality.
+
 
 #### Assembly filtering 
 
@@ -150,6 +153,7 @@ Now we need to remove chimeric transcripts (using the method from Yang, Y. and S
 	python run_chimera_detection.py taxonID.good_transcripts.short_name.fa reference_proteome_fasta num_core output_dir
 	
 This will produced a file called **taxonID.filtered_transcripts.fa** and the taxonID.chimera_transcripts.fa
+
 
 #### Transcript clustering with [Corset](https://github.com/Oshlack/Corset)
 
@@ -261,10 +265,13 @@ You can visualize some of the trees and alignments. You can see that tips that a
 
 Trim these spurious tips with [TreeShrink](https://github.com/uym2/TreeShrink)
 
-	python tree_shrink_wrapper.py DIR tree_file_ending
+	python tree_shrink_wrapper.py DIR tree_file_ending quantile
 
-It outputs the tips that were trimmed in the file .txt and the trimmed trees in the files .tt 
+It outputs the tips that were trimmed in the file .txt and the trimmed trees in the files .tt. You would need to test different quantiles to see which one fit better you data. The TreeShrink uses 0.05 as default but this might be too high for some dataset. This produces that when the outgroups have long branches these get cut, so make sure that you check for the output trees and txt files to see wich branches are getting cut and choose a quantile value for you data (although a single quantile value would not work for all trees)
 
+An alternative option is to trim the tips using relative and absolute length cutoffs. For examples, trim tips that are longer than a relative length cutoff and more than 10 times longer than its sister. Also trim tips that are longer than an absolute value. The output tree also ends with ".tt". Keep input and output trees in the same directory.
+
+python trim_tips.py input_tree_dir tree_file_ending relative_cutoff absolute_cutoff
 
 Mask both mono- and (optional) paraphyletic tips that belong to the same taxon. Keep the tip that has the most un-ambiguous charactors in the trimmed alignment. Keep input and output trees in the same directory.
 
