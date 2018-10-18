@@ -1,6 +1,6 @@
 #Changelog
 
-##Oct.17.2018
+##2018-10-17
 
 ###Added
 New updated cp and mt genomes databases
