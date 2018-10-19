@@ -221,8 +221,8 @@ def clean_se(se_fq,order,genome,DIR):
 
 	if genome == "cp":
 		reference = (order+"_cp.fa")
-	elif order == "mt":
-		genome == (order+"_mt.fa")
+	elif genome == "mt":
+		reference == (order+"_mt.fa")
 	else: reference = (order+"_cp_mt.fa")
 	
 	
