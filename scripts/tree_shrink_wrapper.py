@@ -6,7 +6,7 @@ Phix must be installed and on path
 
 """
 
-import sys, os, shutil, re
+import sys, os, shutil
 
 def trim(DIR,tree_file_ending,q):
 
