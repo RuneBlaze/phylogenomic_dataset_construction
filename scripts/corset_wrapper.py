@@ -49,7 +49,7 @@ def salmon_quantify_pe(transcript,index,pe_fq1,pe_fq2,num_cores,DIR):
 		print (" ".join(cmd))
 		os.system(" ".join(cmd))
 			
-	assert os.path.exists(DIR+quant_name), "salmon-quant did finish"
+	assert os.path.exists(DIR+quant_name), "salmon-quant did not finish"
 
 
 def salmon_quantify_se(transcript,index,se_fq,num_cores,DIR):
