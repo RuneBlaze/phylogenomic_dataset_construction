@@ -349,6 +349,6 @@ Or use Gblocks for trimming alignments if the sequences are very divergent (chan
 
 Choose the minimal cleaned alignment length and minimal number of taxa filters for whether to include an ortholog in the supermatrix. Concatenate selected cleaned matrices:
 
-	python concatenate_matrices_phix.py <aln-clnDIR> <numofsites> <numoftaxa> <outfile>
+	python concatenate_matrices_phyx.py <aln-clnDIR> <numofsites> <numoftaxa> <outfile>
 
 This will output a list of cleaned orthology alignments that passed the filter, a summary of taxon matrix occupancies to check whether any taxon is under represented, and a concatenated matrix in phylip and nexus format

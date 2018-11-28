@@ -2,7 +2,7 @@
 Detects and trim abnormally long branches using TreeShrink
 
 TreeShrink must be installed and on path
-Phix must be installed and on path
+Phyx (pxrr) must be installed and on path
 
 """
 
