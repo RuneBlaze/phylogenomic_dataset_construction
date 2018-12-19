@@ -63,6 +63,9 @@ Dependencies needed to run the scripts (Note that for some dependencies specific
 [Pasta](https://github.com/smirarab/pasta) Version v1.8.2 (newer versions should work)
 
 
+**We recommend running [Croco](https://gitlab.mbb.univ-montp2.fr/mbb/CroCo) for each batch of sequence data to check for cross-contamination before running the pipeline.**
+
+
 ### Step 1: Read processing 
 
 **Note that the pipeline is expecting that the reads are names as taxonID_1.fq.gz or taxonID_1.fq for single end reads and taxonID_1.fq.gz and taxonID_2.fq.gz or taxonID_1.fq and taxonID_2.fq for paired end reads. If redas are not name like that the pipeline won't work**
