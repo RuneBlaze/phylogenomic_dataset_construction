@@ -60,6 +60,8 @@ Dependencies needed to run the scripts (Note that for some dependencies specific
 
 [FastTree](http://www.microbesonline.org/fasttree/) Version 2.1.10 (newer versions should work)
 
+[Pasta](https://github.com/smirarab/pasta) Version v1.8.2 (newer versions should work)
+
 
 ### Step 1: Read processing 
 
@@ -173,7 +175,7 @@ For single end reads:
 
 This will produced the file **taxonID_salmon-clusters.txt** that is gonna be used to select the representative trascript
 
-	python filter_corset_output.py taxonID.filtered_transcripts.fa taxonID_salmon-clusters.txt .
+	python filter_corset_output.py taxonID.filtered_transcripts.fa taxonID_salmon-clusters.txt output_dir
 
 This will produced the file **taxonID.largest_cluster_transcripts.fa**. This is the final filtered transcript file that will be used for translation.
 
