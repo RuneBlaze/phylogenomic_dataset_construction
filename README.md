@@ -63,7 +63,7 @@ Dependencies needed to run the scripts (Note that for some dependencies specific
 [Pasta](https://github.com/smirarab/pasta) Version v1.8.2 (newer versions should work)
 
 
-##**We recommend running [Croco](https://gitlab.mbb.univ-montp2.fr/mbb/CroCo) for each batch of sequence data to check for cross-contamination before running the pipeline.**
+####**We recommend running [Croco](https://gitlab.mbb.univ-montp2.fr/mbb/CroCo) for each batch of sequence data to check for cross-contamination before running the pipeline.**
 
 
 ### Step 1: Read processing 
