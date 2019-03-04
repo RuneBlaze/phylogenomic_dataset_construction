@@ -61,7 +61,7 @@ def concatenate(clnDIR,numofsitesFilter,numoftaxaFilter,outname):
 	print "Supermatrix taxon occupancy stats written to",outname+"_taxon_occupancy_stats"
 	print "Waiting for concatenation to finish. This may take several minutes..."
 	with open(outname+".temp.sh","w") as f: f.write(cmd)
-	os.system(cmd)
+	os.system("bash "+outname+".temp.sh")	
 	
 	#writes phy file
 	cmd_pxs2phy = ["pxs2phy","-o",outname+".phy","-s",outname+".fa"]
