@@ -20,7 +20,7 @@ Citation: Yang, Y. and S.A. Smith. 2014. Orthology inference in non-model organi
 
 **transdecoder_wrapper.py**: Change the path of BLASTP_DB_PATH, this will be the path to your custom blast database. One with proteomes of Arabidopsis and Beta is provided in the repository folder called **databases** as db.
 
-Dependencies needed to run the scripts (Note that for some dependencies specific versions were used so if you used a different version it may not work):
+## Dependencies needed to run the scripts. __Note that for some dependencies specific versions were used so if you used a different version it may not work:__
 
 
 
