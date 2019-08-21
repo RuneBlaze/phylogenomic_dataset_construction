@@ -38,7 +38,7 @@ def fasta_to_tree(DIR,fasta,num_cores,seqtype,num_seq_cutoff=NUM_SEQ_CUTOFF):
 	if seqcount >= NUM_SEQ_CUTOFF: # large cluster
 		print "running pasta"
 		alignment = pasta(DIR,fasta,num_cores,seqtype)
-		cleaned = pxclsq(DIR,alignment,0.01,seqtype)
+		cleaned = pxclsq(DIR,alignment,0.1,seqtype)
 		if len(read_fasta_file(DIR+cleaned)) >= 4:
 			tree = fasttree(DIR,cleaned,seqtype)
 		else: print "Less than 4 taxa in",cleaned

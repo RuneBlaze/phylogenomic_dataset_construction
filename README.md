@@ -76,7 +76,7 @@ The read processing will do:
 1. Random sequencing error correction with [Rcorrector](https://github.com/mourisl/Rcorrector)
 2. Removes read pairs that cannot be corrected
 3. Remove sequencing adapters and low quality sequences with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
-4. Filter organelle reads (cpDNA, mtDNA or both) with [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). Files containing only organelle reads will be produced which can be use to assemble for example the plastomes with [Fast-Plast](https://github.com/mrmckain/Fast-Plast
+4. Filter organelle reads (cpDNA, mtDNA or both) with [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). Files containing only organelle reads will be produced which can be use to assemble for example the plastomes with [Fast-Plast](https://github.com/mrmckain/Fast-Plast)
 5. Runs [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to check read quality and detect over-represented reads
 6. Remove Over-represented sequences
 
