@@ -1,7 +1,7 @@
 # phylogenomic_dataset_construction
 
 
-####This repository contains updated scripts for the [Phylogenomic dataset construction respository](https://bitbucket.org/yangya/phylogenomic_dataset_construction/src/master/) 
+#### This repository contains updated scripts for the [Phylogenomic dataset construction respository](https://bitbucket.org/yangya/phylogenomic_dataset_construction/src/master/) 
 
 The updated scripts cover from the read processing to transcript processing steps. The orthology inference scripts remain the same with only slightly updates.
 
