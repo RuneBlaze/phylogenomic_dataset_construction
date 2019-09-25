@@ -64,7 +64,7 @@ Citation: Yang, Y. and S.A. Smith. 2014. Orthology inference in non-model organi
 
 [Prank](http://wasabiapp.org/software/prank/) Version v.170427
 
-####**We recommend running [Croco](https://gitlab.mbb.univ-montp2.fr/mbb/CroCo) for each batch of sequence data to check for cross-contamination before running the pipeline.**
+#### **We recommend running [Croco](https://gitlab.mbb.univ-montp2.fr/mbb/CroCo) for each batch of sequence data to check for cross-contamination before running the pipeline.**
 
 
 ### Step 1: Read processing 
