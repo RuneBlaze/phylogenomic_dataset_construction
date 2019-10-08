@@ -88,7 +88,7 @@ The first two arguments are the read files. The Order_name is the plant Order (e
 	
 For single end reads:
 	
-	python filter_fq.py taxonID_1.fq.gz taxonID_2.fq.gz Plant_Order organelle_genome num_cores output_dir
+	python filter_fq.py taxonID_1.fq.gz Order_name organelle_genome num_cores output_dir
 	
 
 To see the argument needed to run a scripts call the script without arguments like:
