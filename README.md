@@ -48,7 +48,7 @@ Citation: Yang, Y. and S.A. Smith. 2014. Orthology inference in non-model organi
 
 [MCL](https://micans.org/mcl/) Version 14-137
 
-[TreeShrink](https://github.com/uym2/TreeShrink) It works only with Version 1.0.0. See [here](https://github.com/dfmoralesb/TreeShrink) to get v.1.0.0 
+[TreeShrink](https://github.com/uym2/TreeShrink) It works now with Version 1.3.2 (older versions won't work)
 
 [RAxML](https://github.com/stamatak/standard-RAxML) Version 8.2.11  (newer versions should work)
 
