@@ -299,7 +299,7 @@ def corset_bowtie(transcript,bam,DIR):
 	if os.path.exists(DIR+clusters_name) and os.path.exists(DIR+counts_name) : 
 		print "Corset files found for",bowtie_base_name[0]
 	else:
-		cmd = ["corset","-i bam",bam,"-m -5","-p",(DIR+str(bowtie_base_name[0])+"_bowtie")]
+		cmd = ["corset","-i bam",bam,"-m 5","-p",(DIR+str(bowtie_base_name[0])+"_bowtie")]
 		print (" ".join(cmd))
 		os.system(" ".join(cmd))
 			

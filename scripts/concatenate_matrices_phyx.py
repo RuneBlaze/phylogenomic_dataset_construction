@@ -44,7 +44,7 @@ def concatenate(clnDIR,numofsitesFilter,numoftaxaFilter,outname):
 	
 	total_ortho = len(selected)
 	with open(outname+"_taxon_occupancy_stats","w") as outfile:
-		outfile.write("taxon\t#orthologs\t#total_charactors\tperc_orthologs\tperc_charactors\n")
+		outfile.write("taxon\t#orthologs\t#total_characters\tperc_orthologs\tperc_characters\n")
 		sum_char = 0
 		for taxon in taxon_occupancy:
 			times,chars = taxon_occupancy[taxon][0],taxon_occupancy[taxon][1]
