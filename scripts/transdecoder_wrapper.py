@@ -249,7 +249,7 @@ if __name__ == "__main__":
 		
 		run_transdecoder_blastp(transcripts,num_cores,strand,DIR)
 		check_pep_coverage_redundancy(blastpout)
-		#transrate_cds_ref(outcds,num_cores)
+		transrate_cds_ref(outcds,num_cores)
 
 	else:
 		print ("Usage:")
