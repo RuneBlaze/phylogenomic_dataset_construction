@@ -5,7 +5,7 @@
 
 The updated scripts cover from the read processing to transcript processing steps. The orthology inference scripts remain the same with only slightly updates.
 
-Citation: 
+######Citation: 
 
 [Yang, Y. and S.A. Smith. 2014. Orthology inference in non-model organisms using transcriptomes and low-coverage genomes: improving accuracy and matrix occupancy for phylogenomics. Molecular Biology and Evolution](https://academic.oup.com/mbe/article/31/11/3081/2925722) 
 
