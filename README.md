@@ -287,7 +287,7 @@ An alternative option is to trim the tips using relative and absolute length cut
 
 python trim_tips.py input_tree_dir tree_file_ending relative_cutoff absolute_cutoff
 
-Mask both mono- and (optional) paraphyletic tips that belong to the same taxon. Keep the tip that has the most un-ambiguous charactors in the trimmed alignment. Keep input and output trees in the same directory.
+Mask both mono- and (optional) paraphyletic tips that belong to the same taxon. Keep the tip that has the most un-ambiguous characters in the trimmed alignment. Keep input and output trees in the same directory.
 
 	python mask_tips_by_taxonID_transcripts.py <.tt dir> <aln-cln dir> mask_paraphyletic(y/n)
 
