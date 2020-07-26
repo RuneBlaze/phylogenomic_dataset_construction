@@ -162,7 +162,7 @@ This will produced a file containing only the good transcripts and short names (
 
 #### Chimera removal
 
-Now we need to remove chimeric transcripts (using the method from Yang, Y. and S.A. Smith Optimizing de novo assembly of short-read RNA-seq data for phylogenomics. BMC Genomics 2013, 14:328 doi:10.1186/1471-2164-14-328). This a BLAST-based method that depending of the size of the trascriptome can take a up to a couple of hours.
+Now we need to remove chimeric transcripts using the method from [Yang, Y. and S.A. Smith Optimizing de novo assembly of short-read RNA-seq data for phylogenomics. BMC Genomics](https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-328). This a BLAST-based method that depending of the size of the trascriptome can take a up to a couple of hours.
 
 	python run_chimera_detection.py taxonID.good_transcripts.short_name.fa reference_proteome_fasta num_core output_dir
 	
