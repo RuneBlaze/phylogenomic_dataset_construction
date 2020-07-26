@@ -7,9 +7,9 @@ The updated scripts cover from the read processing to transcript processing step
 
 Citation: 
 
-Yang, Y. and S.A. Smith. 2014. Orthology inference in non-model organisms using transcriptomes and low-coverage genomes: improving accuracy and matrix occupancy for phylogenomics. Molecular Biology and Evolution. doi: 10.1093/molbev/msu245
+[Yang, Y. and S.A. Smith. 2014. Orthology inference in non-model organisms using transcriptomes and low-coverage genomes: improving accuracy and matrix occupancy for phylogenomics. Molecular Biology and Evolution](https://academic.oup.com/mbe/article/31/11/3081/2925722) 
 
-Morales-Briones, D.F., G. Kadereit, D.T. Tefarikis, M.J. Moore, S.A. Smith, S.F. Brockington, A.Timoneda, W.C. Yim, J.C. Cushman, Y. Yang. 2019. Disentangling Sources of Gene Tree Discordance in Phylotranscriptomic Datasets: A Case Study from Amaranthaceae s.l. bioRxiv 794370.
+[Morales-Briones, D.F., G. Kadereit, D.T. Tefarikis, M.J. Moore, S.A. Smith, S.F. Brockington, A.Timoneda, W.C. Yim, J.C. Cushman, Y. Yang. Disentangling Sources of Gene Tree Discordance in Phylogenomic Datasets: Testing Ancient Hybridizations in Amaranthaceae s.l.](https://www.biorxiv.org/content/10.1101/794370v3)
 
 
 ##### After cloning the repository you need to change several paths within the next scripts in order to make them work on your local computer:
