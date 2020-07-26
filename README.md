@@ -13,7 +13,6 @@ The updated scripts cover from the read processing to transcript processing step
 
 
 
-
 ##### After cloning the repository you need to change several paths within the next scripts in order to make them work on your local computer:
 
 **extract_sequences.py**: Change the path of CP_DATABASE and MT_DATABASE both files will be in the repository folder called **databases**.
