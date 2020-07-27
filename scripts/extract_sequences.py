@@ -8,8 +8,8 @@ from Bio import SeqIO
 from os.path import expanduser
 home = expanduser("~")
 
-CP_DATABASE=os.path.expanduser("~/Desktop/botany_2018/databases/chloroplast_NCBI_reference_sequences_OCT_17_2018.fasta.bgz")
-MT_DATABASE=os.path.expanduser("~/Desktop/botany_2018/databases/mitochondrion_NCBI_reference_sequences_OCT_17_2018.fasta.bgz")
+CP_DATABASE=os.path.expanduser("~/Desktop/phylogenomic_dataset_construction/databases/chloroplast_NCBI_reference_sequences_OCT_17_2018.fasta.bgz")
+MT_DATABASE=os.path.expanduser("~/Desktop/phylogenomic_dataset_construction/databases/mitochondrion_NCBI_reference_sequences_OCT_17_2018.fasta.bgz")
 
 def extract_order_cp(order,DIR):
 	assert os.path.exists(CP_DATABASE),"Cannot find the plastome database "+CP_DATABASE
