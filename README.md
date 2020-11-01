@@ -5,6 +5,8 @@
 
 The updated scripts cover from the read processing to transcript processing steps. The orthology inference scripts remain the same with only slightly updates.
 
+New July 2020: Pipeline walk-through by Diego Morales-Briones
+[Part 1](https://drive.google.com/drive/folders/1srReGBl9uI5-mJsmi1YyAoxSq_fHleaU)
 
 
 ###### Citation: 
