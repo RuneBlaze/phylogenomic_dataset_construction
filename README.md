@@ -7,12 +7,17 @@ The updated scripts cover from the read processing to transcript processing step
 
 #### New July 2020: Tutorial videos from the Botany 2020 phylotranscriptomics workshop 
 Pipeline walk-through by Diego Morales-Briones:
-[Part 1 video](https://drive.google.com/file/d/1HVrgcT9P55dE5iLmqrqiy8QFYFsx3MwT/view?usp=sharing) [Part 2 video](https://drive.google.com/file/d/1IViH1A2VsjfQophogbDgP1ekXv7AQrad/view?usp=sharing)
+
+[Part 1 video](https://drive.google.com/file/d/1HVrgcT9P55dE5iLmqrqiy8QFYFsx3MwT/view?usp=sharing)
+[Part 2 video](https://drive.google.com/file/d/1IViH1A2VsjfQophogbDgP1ekXv7AQrad/view?usp=sharing)
 
 Background infomation
 1. Introduction by Stephen Smith [Video](https://drive.google.com/file/d/1xanJmOwpH1VGBrvQea-htjdTFrucvuLe/view?usp=sharing)
+
 2. Sequence processing by Ya Yang [Video](https://drive.google.com/file/d/1UpUOnKwIjuV40n3KZ6nAKg02hWSefYE7/view?usp=sharing)
+
 3. Homology and orthology inference [Video](https://drive.google.com/file/d/16Z6DAu9JTwhy5zCYkf6Mpg2Nci1vsc05/view?usp=sharing)
+
 4. Phylogenetic inference and gene tree conflict [Video](https://drive.google.com/file/d/1kbzpcm7B-2cronKMFA6g3PnQWtdRPNnY/view?usp=sharing)
 
 
