@@ -8,10 +8,10 @@ The updated scripts cover from the read processing to transcript processing step
 #### New July 2020: Tutorial videos from the Botany 2020 phylotranscriptomics workshop 
 Pipeline walk-through by Diego Morales-Briones:
 
-[Part 1 video](https://drive.google.com/file/d/1HVrgcT9P55dE5iLmqrqiy8QFYFsx3MwT/view?usp=sharing)
-[Part 2 video](https://drive.google.com/file/d/1IViH1A2VsjfQophogbDgP1ekXv7AQrad/view?usp=sharing)
+[Part 1 video](https://drive.google.com/file/d/1HVrgcT9P55dE5iLmqrqiy8QFYFsx3MwT/view?usp=sharing), [Part 2 video](https://drive.google.com/file/d/1IViH1A2VsjfQophogbDgP1ekXv7AQrad/view?usp=sharing)
 
 Background infomation
+
 1. Introduction by Stephen Smith [Video](https://drive.google.com/file/d/1xanJmOwpH1VGBrvQea-htjdTFrucvuLe/view?usp=sharing)
 
 2. Sequence processing by Ya Yang [Video](https://drive.google.com/file/d/1UpUOnKwIjuV40n3KZ6nAKg02hWSefYE7/view?usp=sharing)
