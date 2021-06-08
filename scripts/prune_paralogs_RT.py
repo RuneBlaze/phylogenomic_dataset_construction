@@ -11,7 +11,7 @@ OUT	taxonID3
 import phylo3,newick3,os,sys
 import tree_utils
 
-def RT(homoDIR,tree_file_eneding,outDIR,min_ingroup_taxa,taxon_code_file_file):
+def RT(homoDIR,tree_file_eneding,outDIR,min_ingroup_taxa,taxon_code_file):
 	if homoDIR[-1] != "/": homoDIR += "/"
 	if outDIR[-1] != "/": outDIR += "/"
 	min_ingroup_taxa = int(min_ingroup_taxa)
@@ -88,7 +88,7 @@ def RT(homoDIR,tree_file_eneding,outDIR,min_ingroup_taxa,taxon_code_file_file):
 
 if __name__ == "__main__":
 	if len(sys.argv) != 6:
-		print "python prune_paralogs_RT.py homoTreeDIR tree_file_eneding outDIR min_ingroup_taxa taxon_code_file"
+		print "python prune_paralogs_RT.py homoTreeDIR tree_file_ending outDIR min_ingroup_taxa taxon_code_file"
 		sys.exit(0)
 	
 	homoTreeDIR,tree_file_ending,outDIR,min_ingroup_taxa,taxon_code_file=sys.argv[1:]
