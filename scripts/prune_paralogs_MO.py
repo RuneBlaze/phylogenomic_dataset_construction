@@ -1,4 +1,9 @@
 """
+Prepare a taxon file, with each line look like (separated by tab):
+IN	taxonID1
+IN	taxonID2
+OUT	taxonID3
+
 Taxon duplication? --No--> output one-to-one orthologs
 		|
 	   Yes
@@ -24,25 +29,6 @@ set OUTPUT_1to1_ORTHOLOGS to False
 import phylo3,newick3,os,sys
 
 OUTPUT_1to1_ORTHOLOGS = True
-
-"""
-#for Millipedes data set
-OUTGROUPS = ["Daph","Ixod"]
-INGROUPS = ["Abac","Arch","Brac","Camb","Clei","Glom","Lith","Peta","Pros","Pseu"]
-MIN_TAXA = 8
-
-#for Hymenoptera data set
-OUTGROUPS = ["Nvit"]
-INGROUPS = ["Amel","Argochrysis","Brachycistis","Bradynobaenidae","Bter","Chyphotes","Crioscolia","Hsal","Lasioglossum","Lhum","Megachile","Mischocyttarus","Pbar","Pepsis","Pseudomasaris","Sceliphron","Sphaeropthalma","Stigmatomma"]
-MIN_TAXA = 8
-
-#for grape data set
-OUTGROUPS = ["9"]
-INGROUPS = ["Viti","24","19","41","26","27","4","10","12","40","3","11","5","8","13"]
-"""
-#for tutorial data set
-OUTGROUPS = ["Beta"]
-INGROUPS = ["HURS","NXTS","RNBN","SCAO"]
 
 #if pattern changes, change it here
 #given tip label, return taxon name identifier
@@ -186,14 +172,33 @@ def prune_paralogs_from_rerooted_homotree(root):
 	return root
 
 if __name__ == "__main__":
-	if len(sys.argv) != 5:
-		print "python python prune_paralogs_MO.py homoTreeDIR tree_file_ending minimal_taxa outDIR"
+	if len(sys.argv) != 6:
+		print "python prune_paralogs_MO.py homoTreeDIR tree_file_ending minimal_taxa taxon_file outDIR"
 		sys.exit(0)
 	
 	inDIR = sys.argv[1]+"/"
 	tree_file_ending = sys.argv[2]
 	MIN_TAXA = int(sys.argv[3])
 	outDIR = sys.argv[4]+"/"
+	taxon_file = sys.argv[5]
+	
+	INGROUPS = []
+	OUTGROUPS = []
+	with open(taxon_file,"r") as infile:
+		for line in infile:
+			if len(line) < 3: continue
+			spls = line.strip().split("\t")
+			if spls[0] == "IN": INGROUPS.append(spls[1])
+			elif spls[0] == "OUT": OUTGROUPS.append(spls[1])
+			else:
+				print "Check taxon_code_file file format"
+				sys.exit()
+	if len(set(INGROUPS) & set(OUTGROUPS)) > 0:
+		print "Taxon ID",set(INGROUPS) & set(OUTGROUPS),"in both ingroups and outgroups"
+		sys.exit(0)
+	print len(INGROUPS),"ingroup taxa and",len(OUTGROUPS),"outgroup taxa read"
+	print "Ingroups:",INGROUPS
+	print "Outgroups:",OUTGROUPS
 
 	for i in os.listdir(inDIR):
 		if not i.endswith(tree_file_ending): continue
@@ -219,6 +224,8 @@ if __name__ == "__main__":
 			for name in names:
 				if name not in INGROUPS and name not in OUTGROUPS:
 					print "check name",name
+					print INGROUPS
+					print OUTGROUPS
 					sys.exit()
 			outgroup_names = get_front_outgroup_names(curroot)
 			
@@ -236,8 +243,8 @@ if __name__ == "__main__":
 				curroot = reroot_with_monophyletic_outgroups(curroot)
 				#only return one tree after prunning
 				if curroot != None:
-					with open(outID+".reroot","w") as outfile:
-						outfile.write(newick3.tostring(curroot)+";\n")
+					#with open(outID+".reroot","w") as outfile:
+					#	outfile.write(newick3.tostring(curroot)+";\n")
 					ortho = prune_paralogs_from_rerooted_homotree(curroot)
 					if len(set(get_front_names(curroot))) >= MIN_TAXA:
 						with open(outID+".ortho.tre","w") as outfile:
