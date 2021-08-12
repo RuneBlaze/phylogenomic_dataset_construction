@@ -14,20 +14,23 @@ function parse_cli()
 end
 
 args = parse_cli()
-dir = tempdir()
-outdir = tempdir()
-mkdir(dir)
-for (i, l) in enumerate(readlines(args.input))
+dir = mktempdir()
+outdir = mktempdir()
+#mkdir(dir)
+for (i, l) in enumerate(readlines(args["input"]))
     name = joinpath(dir, "input$(i)d.tre")
     open(name, "w+") do f
         write(f, l)
     end
 end
 
-run(`python scripts/prune_paralogs_MI.py $dir "" inf inf 4 $outdir`)
+#run(`python scripts/prune_paralogs_MI.py $dir "" inf inf 4 $outdir`)
+scriptpath = joinpath(@__DIR__,"..","scripts","prune_paralogs_MI.py")
+run(`python $scriptpath $dir "" inf inf 4 $outdir`)
+
 sizes = []
-open(args.output, "w+") do f
-    for (i, l) in enumerate(readlines(args.input))
+open(args["output"], "w+") do f
+    for (i, l) in enumerate(readlines(args["input"]))
         inputs = glob("outdir/input$(i)d*.tre")
         decomposed = []
         for j=inputs
@@ -40,7 +43,7 @@ open(args.output, "w+") do f
     end
 end
 
-open(args.output + ".size.json", "w+") do f
+open(args["output"] + ".size.json", "w+") do f
     JSON.print(f, sizes)
 end
 
