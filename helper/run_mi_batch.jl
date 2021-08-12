@@ -1,6 +1,7 @@
 using ArgParse
 using Base.Filesystem
 using Glob
+import JSON
 
 function parse_cli()
     s = ArgParseSettings()
