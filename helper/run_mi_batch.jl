@@ -1,6 +1,7 @@
 using ArgParse
 using Base.Filesystem
 using Glob
+import JSON
 
 function parse_cli()
     s = ArgParseSettings()
@@ -31,10 +32,10 @@ run(`python $scriptpath $dir "" inf inf 4 $outdir`)
 sizes = []
 open(args["output"], "w+") do f
     for (i, l) in enumerate(readlines(args["input"]))
-        inputs = glob("outdir/input$(i)d*.tre")
+        inputs = glob("input$(i)d*.tre", outdir)
         decomposed = []
         for j=inputs
-            push!(decomposed, rstrip(read(j, String)))
+            push!(decomposed, rstrip(read(joinpath(outdir, j), String)))
         end
         push!(sizes, length(decomposed))
         for d=decomposed
@@ -43,7 +44,7 @@ open(args["output"], "w+") do f
     end
 end
 
-open(args["output"] + ".size.json", "w+") do f
+open(args["output"] * ".size.json", "w+") do f
     JSON.print(f, sizes)
 end
 
