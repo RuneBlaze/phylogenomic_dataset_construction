@@ -2,6 +2,7 @@ using ArgParse
 using Base.Filesystem
 using Glob
 import JSON
+using Logging
 
 function parse_cli()
     s = ArgParseSettings()
@@ -15,8 +16,9 @@ function parse_cli()
 end
 
 function execute_mi(input, output)
-    dir = mktempdir()
-    outdir = mktempdir()
+    dir = mktempdir(".";cleanup=false)
+    outdir = mktempdir(".";cleanup=false)
+    @info "creating $dir and $outdir"
     for (i, l) in enumerate(readlines(input))
         name = joinpath(dir, "input$(i)d.tre")
         open(name, "w+") do f
@@ -25,11 +27,20 @@ function execute_mi(input, output)
     end
     #run(`python scripts/prune_paralogs_MI.py $dir "" inf inf 4 $outdir`)
     scriptpath = joinpath(@__DIR__,"..","scripts","prune_paralogs_MI.py")
-    run(`python $scriptpath $dir "" inf inf 4 $outdir`)
+    try
+        cmd = `python $scriptpath $dir "" inf inf 4 $outdir`
+        @info "running with $cmd on $input"
+        run(cmd)
+    catch e
+        bt = catch_backtrace()
+        msg = sprint(showerror, e, bt)
+        println(msg)
+        println("on $input crashed!")
+    end
     sizes = []
     open(output, "w+") do f
         for (i, l) in enumerate(readlines(input))
-            inputs = glob("outdir/input$(i)d*.tre")
+            inputs = glob("input$(i)d*.tre", outdir)
             decomposed = []
             for j=inputs
                 push!(decomposed, rstrip(read(j, String)))
@@ -43,8 +54,6 @@ function execute_mi(input, output)
     open(output * ".size.json", "w+") do f
         JSON.print(f, sizes)
     end
-    rm(dir; recursive = true)
-    rm(outdir; recursive = true)
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
